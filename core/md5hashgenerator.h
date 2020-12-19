@@ -3,6 +3,7 @@
 
 
 #include "hashgenerator.h"
+#include <QByteArray>
 
 
 namespace CORE
@@ -10,9 +11,12 @@ namespace CORE
 class md5HashGenerator : public HashGenerator
 {
 public:
-    QString getHash(const QFile& file)const override;
+    QString getHash(QFile& file)const override;
     md5HashGenerator();
     ~md5HashGenerator();
+
+private:
+
 };
 }
 #endif // MD5HASHGENERATOR_H
