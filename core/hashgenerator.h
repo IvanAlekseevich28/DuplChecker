@@ -1,7 +1,7 @@
 #ifndef HASHGENERATOR_H
 #define HASHGENERATOR_H
 
-#include <boost/optional.hpp>
+#include <memory>
 #include <QString>
 #include <QFile>
 
@@ -24,7 +24,7 @@ public:
 
 
 private:
-    boost::optional<HashGenerator> m_alg;
+    std::unique_ptr<HashGenerator> m_alg;
 };
 }
 #endif // HASHGENERATOR_H

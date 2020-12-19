@@ -4,7 +4,7 @@
 #include <QFile>
 #include <QList>
 #include <QString>
-#include <boost/optional.hpp>
+#include <memory>
 
 
 namespace CORE
@@ -26,7 +26,7 @@ public:
     void setDuplicateChackerAlg(eAlg = SmartHash);
 
 private:
-    boost::optional<DuplChecker> m_duplChecker;
+    std::unique_ptr<DuplChecker> m_duplChecker;
 };
 
 
