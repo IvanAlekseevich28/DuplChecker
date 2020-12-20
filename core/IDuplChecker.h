@@ -13,13 +13,13 @@ struct FilesPair;
 class IDuplChecker
 {
 public:
-    virtual QList<FilesPair> getDuplicationFilesPaths(QList<QFile>& files1,
-                                                      QList<QFile>& files2)=0;
+    virtual QList<FilesPair> getDuplicationFilesPaths(QList<QFile*>& files1,
+                                                      QList<QFile*>& files2)=0;
 
-    virtual ~IDuplChecker();
+    virtual ~IDuplChecker(){}
 
 protected:
-    IDuplChecker();
+    IDuplChecker(){}
 
 };
 

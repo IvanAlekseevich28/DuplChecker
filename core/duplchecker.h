@@ -12,10 +12,10 @@ class DuplChecker
 {
 public:
     DuplChecker();
-    virtual ~DuplChecker();
+    ~DuplChecker(){}
 
-    QList<FilesPair> getDuplicationFilesPaths(QList<QFile>& files1,
-                                              QList<QFile>& files2)const;
+    QList<FilesPair> getDuplicationFilesPaths(QList<QFile*>& files1,
+                                              QList<QFile*>& files2)const;
 
     enum eAlg
     {

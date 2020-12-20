@@ -10,8 +10,8 @@ SmartHashDChecker::SmartHashDChecker() : m_hashGen()
 }
 
 
-QList<FilesPair> SmartHashDChecker::getDuplicationFilesPaths(   QList<QFile>& files1,
-                                                                QList<QFile>& files2)
+QList<FilesPair> SmartHashDChecker::getDuplicationFilesPaths(QList<QFile *> &files1,
+                                                                QList<QFile *> &files2)
 {
     genHash(files1);
     auto rawLst = genRawFilesList(files2);
@@ -20,29 +20,27 @@ QList<FilesPair> SmartHashDChecker::getDuplicationFilesPaths(   QList<QFile>& fi
 }
 
 
-void SmartHashDChecker::genHash(QList<QFile>& files)
+void SmartHashDChecker::genHash(QList<QFile*>& files)
 {
     m_filesHashes.clear();
 
     for (auto& f : files)
     {
         m_filesHashes.insert(
-                    m_hashGen.getHash(f), &f);
+                    m_hashGen.getHash(*f), f);
     }
 }
 
 
-QList<SmartHashDChecker::QFilePair> SmartHashDChecker::genRawFilesList(QList<QFile>& files)const
+QList<SmartHashDChecker::QFilePair> SmartHashDChecker::genRawFilesList(QList<QFile*>& files)const
 {
     QList<SmartHashDChecker::QFilePair> answLst;
 
-    for (auto& f : files)
+    for (auto pFile : files)
     {
-        auto otherFile = m_filesHashes.find(m_hashGen.getHash(f));
+        auto otherFile = m_filesHashes.find(m_hashGen.getHash(*pFile));
         if (otherFile != m_filesHashes.end())
-        {
-            answLst.push_back(QFilePair(*(otherFile.value()), f));
-        }
+            answLst.push_back(QFilePair(*(otherFile.value()), *pFile));
     }
 
     return answLst;
@@ -52,7 +50,8 @@ QList<SmartHashDChecker::QFilePair> SmartHashDChecker::genRawFilesList(QList<QFi
 QList<FilesPair> SmartHashDChecker::binaryChecker(QList<QFilePair>& rawLst)const
 {
     QList<FilesPair> answLst;
-    for (const auto& pair : rawLst)
+//    auto iter = rawLst.begin(); iter != rawLst.end(); iter++
+    for (auto& pair : rawLst)
     {
         if (binaryCompare(pair))
             answLst.push_back(FilesPair(pair.file1->fileName(), pair.file2->fileName()));

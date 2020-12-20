@@ -14,10 +14,10 @@ public:
 
     virtual QString getHash(QFile& file)const=0;
 
-    virtual ~IHashGenerator();
+    virtual ~IHashGenerator(){}
 
 protected:
-    IHashGenerator();
+    IHashGenerator(){}
 
 };
 }

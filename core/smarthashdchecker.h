@@ -13,10 +13,10 @@ class SmartHashDChecker : public IDuplChecker
 {
 public:
     SmartHashDChecker();
-    ~SmartHashDChecker() override;
+    ~SmartHashDChecker() override{}
 
-    QList<FilesPair> getDuplicationFilesPaths(QList<QFile>& files1,
-                                              QList<QFile>& files2) override;
+    QList<FilesPair> getDuplicationFilesPaths(QList<QFile*>& files1,
+                                              QList<QFile*>& files2) override;
 
 private:
     struct QFilePair
@@ -28,8 +28,8 @@ private:
         QFile* file2;
     };
 private:
-    void genHash(QList<QFile>& files);
-    QList<QFilePair> genRawFilesList(QList<QFile>& files)const;
+    void genHash(QList<QFile *> &files);
+    QList<QFilePair> genRawFilesList(QList<QFile *> &files)const;
     QList<FilesPair> binaryChecker(QList<QFilePair>& rawLst)const;
     bool binaryCompare(const QFilePair &pair)const;
 

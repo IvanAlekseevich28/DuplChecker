@@ -3,15 +3,16 @@
 #include "smarthashdchecker.h"
 
 
-namespace CORE
-{
+using namespace CORE;
+
+
 DuplChecker::DuplChecker()
 {
     setDuplicateChackerAlg();
 }
 
-QList<FilesPair> DuplChecker::getDuplicationFilesPaths(QList<QFile>& files1,
-                                                      QList<QFile>& files2) const
+QList<FilesPair> DuplChecker::getDuplicationFilesPaths(QList<QFile *> &files1,
+                                                      QList<QFile *> &files2) const
 {
     if (!m_duplChecker) return QList<FilesPair>();
 
@@ -26,4 +27,4 @@ void DuplChecker::setDuplicateChackerAlg(eAlg ealg)
     case DuplChecker::SmartHash: m_duplChecker.reset(new SmartHashDChecker); break;
     }
 }
-}
+
