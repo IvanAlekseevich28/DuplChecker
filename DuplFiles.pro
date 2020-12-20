@@ -17,6 +17,8 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    core/IDuplChecker.h \
+    core/IHashGenerator.h \
     core/duplchecker.h \
     core/hashgenerator.h \
     core/md5hashgenerator.h \

@@ -2,20 +2,18 @@
 #define MD5HASHGENERATOR_H
 
 
-#include "hashgenerator.h"
+#include "IHashGenerator.h"
 #include <QByteArray>
 
 
 namespace CORE
 {
-class md5HashGenerator : public HashGenerator
+class md5HashGenerator : public IHashGenerator
 {
 public:
     QString getHash(QFile& file)const override;
     md5HashGenerator();
     ~md5HashGenerator();
-
-private:
 
 };
 }

@@ -14,7 +14,9 @@ QList<FilesPair> SmartHashDChecker::getDuplicationFilesPaths(   QList<QFile>& fi
                                                                 QList<QFile>& files2)
 {
     genHash(files1);
-    genRawFilesList(files2);
+    auto rawLst = genRawFilesList(files2);
+
+    return binaryChecker(rawLst);
 }
 
 
@@ -25,7 +27,7 @@ void SmartHashDChecker::genHash(QList<QFile>& files)
     for (auto& f : files)
     {
         m_filesHashes.insert(
-                    m_hashGen.getHash(f), f);
+                    m_hashGen.getHash(f), &f);
     }
 }
 
@@ -39,7 +41,30 @@ QList<SmartHashDChecker::QFilePair> SmartHashDChecker::genRawFilesList(QList<QFi
         auto otherFile = m_filesHashes.find(m_hashGen.getHash(f));
         if (otherFile != m_filesHashes.end())
         {
-            answLst.push_back(QFilePair(otherFile, f));
+            answLst.push_back(QFilePair(*(otherFile.value()), f));
         }
     }
+
+    return answLst;
+}
+
+
+QList<FilesPair> SmartHashDChecker::binaryChecker(QList<QFilePair>& rawLst)const
+{
+    QList<FilesPair> answLst;
+    for (const auto& pair : rawLst)
+    {
+        if (binaryCompare(pair))
+            answLst.push_back(FilesPair(pair.file1->fileName(), pair.file2->fileName()));
+    }
+
+    return answLst;
+}
+
+
+bool SmartHashDChecker::binaryCompare(const QFilePair& pair)const
+{
+    if (pair.file1->fileName() == pair.file2->fileName()) return false;
+
+    return true;
 }

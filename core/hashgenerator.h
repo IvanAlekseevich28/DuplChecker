@@ -2,8 +2,7 @@
 #define HASHGENERATOR_H
 
 #include <memory>
-#include <QString>
-#include <QFile>
+#include "IHashGenerator.h"
 
 namespace CORE
 {
@@ -11,11 +10,10 @@ class HashGenerator
 {
 public:
     HashGenerator();
-    virtual ~HashGenerator();
+    ~HashGenerator();
 
-    virtual QString getHash(QFile& file)const;
+    QString getHash(QFile& file)const;
 
-public:
     enum eAlg
     {
         md5
@@ -24,7 +22,7 @@ public:
 
 
 private:
-    std::unique_ptr<HashGenerator> m_alg;
+    std::unique_ptr<IHashGenerator> m_alg;
 };
 }
 #endif // HASHGENERATOR_H

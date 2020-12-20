@@ -1,9 +1,7 @@
-#ifndef IDUPLCHECKER_H
-#define IDUPLCHECKER_H
+#ifndef DUPLCHECKER_H
+#define DUPLCHECKER_H
 
-#include <QFile>
-#include <QList>
-#include <QString>
+#include "IDuplChecker.h"
 #include <memory>
 
 
@@ -16,8 +14,8 @@ public:
     DuplChecker();
     virtual ~DuplChecker();
 
-    virtual QList<FilesPair> getDuplicationFilesPaths(QList<QFile>& files1,
-                                                      QList<QFile>& files2);
+    QList<FilesPair> getDuplicationFilesPaths(QList<QFile>& files1,
+                                              QList<QFile>& files2)const;
 
     enum eAlg
     {
@@ -26,14 +24,7 @@ public:
     void setDuplicateChackerAlg(eAlg = SmartHash);
 
 private:
-    std::unique_ptr<DuplChecker> m_duplChecker;
-};
-
-
-struct FilesPair
-{
-    QString pathFile1;
-    QString pathFile2;
+    std::unique_ptr<IDuplChecker> m_duplChecker;
 };
 }
-#endif // IDUPLCHECKER_H
+#endif // DUPLCHECKER_H

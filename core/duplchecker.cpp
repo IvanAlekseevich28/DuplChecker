@@ -11,7 +11,7 @@ DuplChecker::DuplChecker()
 }
 
 QList<FilesPair> DuplChecker::getDuplicationFilesPaths(QList<QFile>& files1,
-                                                      QList<QFile>& files2)
+                                                      QList<QFile>& files2) const
 {
     if (!m_duplChecker) return QList<FilesPair>();
 
