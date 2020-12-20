@@ -13,7 +13,7 @@ public:
     HashGenerator();
     virtual ~HashGenerator();
 
-    virtual QString getHash(const QFile& file)const;
+    virtual QString getHash(QFile& file)const;
 
 public:
     enum eAlg

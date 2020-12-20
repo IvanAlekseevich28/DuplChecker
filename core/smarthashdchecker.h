@@ -4,6 +4,7 @@
 
 #include "duplchecker.h"
 #include <QHash>
+#include "hashgenerator.h"
 
 
 namespace CORE
@@ -14,18 +15,28 @@ public:
     SmartHashDChecker();
     ~SmartHashDChecker() override;
 
-    QList<FilesPair> getDuplicationFilesPaths(const QList<QFile>& files1,
-                                              const QList<QFile>& files2)const override;
+    QList<FilesPair> getDuplicationFilesPaths(QList<QFile>& files1,
+                                              QList<QFile>& files2) override;
 
 private:
-    void genHash(const QList<QFile>& files);
-    QList<QFile>& genRawFilesList()const;
-    QList<QFile>& binaryChecker()const;
+    struct QFilePair
+    {
+        QFilePair(QFile& file1, QFile& file2)
+            : file1(file1), file2(file2) {}
+
+        QFile& file1;
+        QFile& file2;
+    };
+private:
+    void genHash(QList<QFile>& files);
+    QList<QFilePair> genRawFilesList(QList<QFile>& files)const;
+    QList<FilesPair> binaryChecker(QList<QFilePair>& rawLst)const;
     bool binaryCompare(QFile)const;
 
 
 private:
     QHash<QString, QFile&> m_filesHashes;
+    HashGenerator   m_hashGen;
 
 };
 }

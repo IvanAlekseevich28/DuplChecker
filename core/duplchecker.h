@@ -16,8 +16,8 @@ public:
     DuplChecker();
     virtual ~DuplChecker();
 
-    virtual QList<FilesPair> getDuplicationFilesPaths(const QList<QFile>& files1,
-                                                      const QList<QFile>& files2)const;
+    virtual QList<FilesPair> getDuplicationFilesPaths(QList<QFile>& files1,
+                                                      QList<QFile>& files2);
 
     enum eAlg
     {
