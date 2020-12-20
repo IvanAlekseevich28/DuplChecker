@@ -13,7 +13,7 @@ class md5HashGenerator : public IHashGenerator
 public:
     QString getHash(QFile& file)const override;
     md5HashGenerator();
-    ~md5HashGenerator();
+    ~md5HashGenerator()override;
 
 };
 }

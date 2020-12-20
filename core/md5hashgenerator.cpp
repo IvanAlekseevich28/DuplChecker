@@ -10,6 +10,11 @@ md5HashGenerator::md5HashGenerator()
 
 }
 
+md5HashGenerator::~md5HashGenerator()
+{
+
+}
+
 QString md5HashGenerator::getHash(QFile& file)const
 {
     qint64 fileSize = file.size();

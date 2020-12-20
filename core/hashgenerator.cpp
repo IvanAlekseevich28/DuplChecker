@@ -11,6 +11,10 @@ HashGenerator::HashGenerator()
     setAlg();
 }
 
+HashGenerator::~HashGenerator()
+{
+    m_alg.release();
+}
 
 QString HashGenerator::getHash(QFile& file)const
 {

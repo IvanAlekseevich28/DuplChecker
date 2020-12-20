@@ -13,7 +13,7 @@ class SmartHashDChecker : public IDuplChecker
 {
 public:
     SmartHashDChecker();
-    ~SmartHashDChecker() override{}
+    ~SmartHashDChecker() override;
 
     QList<FilesPair> getDuplicationFilesPaths(QList<QFile*>& files1,
                                               QList<QFile*>& files2) override;

@@ -9,6 +9,11 @@ SmartHashDChecker::SmartHashDChecker() : m_hashGen()
 
 }
 
+SmartHashDChecker::~SmartHashDChecker()
+{
+
+}
+
 
 QList<FilesPair> SmartHashDChecker::getDuplicationFilesPaths(QList<QFile *> &files1,
                                                                 QList<QFile *> &files2)
