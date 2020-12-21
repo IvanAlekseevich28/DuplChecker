@@ -20,11 +20,14 @@ SOURCES += \
 
 HEADERS += \
     ICore.h \
+    ILoopUI.h \
+    IPipeUI.h \
     app.h \
     core/IDuplChecker.h \
     core/IHashGenerator.h \
     core/coreadapter.h \
     core/duplchecker.h \
+    core/filespair.h \
     core/hashgenerator.h \
     core/md5hashgenerator.h \
     core/smarthashdchecker.h \

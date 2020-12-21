@@ -1,6 +1,7 @@
 #include "coreadapter.h"
 
 #include <QDirIterator>
+#include "duplchecker.h"
 
 
 using namespace CORE;

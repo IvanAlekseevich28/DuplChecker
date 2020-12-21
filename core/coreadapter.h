@@ -3,12 +3,14 @@
 
 
 #include "../ICore.h"
-#include "duplchecker.h"
 #include <QList>
+#include <QFile>
+#include <memory>
 
 
 namespace CORE
 {
+class DuplChecker;
 class CoreAdapter : public CONTROLLER::ICore
 {
 public:

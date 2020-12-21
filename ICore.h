@@ -2,7 +2,7 @@
 #define ICORE_H
 
 
-#include "core/IDuplChecker.h"
+#include "core/filespair.h"
 
 
 namespace CONTROLLER
