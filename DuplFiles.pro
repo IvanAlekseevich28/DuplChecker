@@ -9,8 +9,8 @@ CONFIG += c++14
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    UI/CLI/consoleoutput.cpp \
     UI/CLI/simpleoutput.cpp \
+    UI/CLI/textoutput.cpp \
     app.cpp \
     core/coreadapter.cpp \
     core/duplchecker.cpp \
@@ -24,8 +24,8 @@ HEADERS += \
     ICore.h \
     ILoopUI.h \
     IPipeUI.h \
-    UI/CLI/consoleoutput.h \
     UI/CLI/simpleoutput.h \
+    UI/CLI/textoutput.h \
     app.h \
     core/IDuplChecker.h \
     core/IHashGenerator.h \
