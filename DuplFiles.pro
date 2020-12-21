@@ -9,24 +9,29 @@ CONFIG += c++14
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    app.cpp \
+    core/coreadapter.cpp \
     core/duplchecker.cpp \
     core/hashgenerator.cpp \
     core/md5hashgenerator.cpp \
     core/smarthashdchecker.cpp \
     main.cpp \
-    mainwindow.cpp
+    UI/mainwindow.cpp
 
 HEADERS += \
+    ICore.h \
+    app.h \
     core/IDuplChecker.h \
     core/IHashGenerator.h \
+    core/coreadapter.h \
     core/duplchecker.h \
     core/hashgenerator.h \
     core/md5hashgenerator.h \
     core/smarthashdchecker.h \
-    mainwindow.h
+    UI/mainwindow.h
 
 FORMS += \
-    mainwindow.ui
+    UI/mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
