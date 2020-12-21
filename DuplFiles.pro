@@ -16,7 +16,7 @@ SOURCES += \
     core/md5hashgenerator.cpp \
     core/smarthashdchecker.cpp \
     main.cpp \
-    UI/mainwindow.cpp
+    UI/GUI/mainwindow.cpp
 
 HEADERS += \
     ICore.h \
@@ -31,10 +31,10 @@ HEADERS += \
     core/hashgenerator.h \
     core/md5hashgenerator.h \
     core/smarthashdchecker.h \
-    UI/mainwindow.h
+    UI/GUI/mainwindow.h
 
 FORMS += \
-    UI/mainwindow.ui
+    UI/GUI/mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
