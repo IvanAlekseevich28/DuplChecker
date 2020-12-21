@@ -1,11 +1,16 @@
-#include "mainwindow.h"
+#include "app.h"
 
-#include <QApplication>
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-    return a.exec();
+    App app;
+    bool appError = 0;
+    if (argc == 3)
+    {
+        appError = app.run(argv[1], argv[2]);
+    } else
+    {
+        appError = app.run();
+    }
+    return appError;
 }
