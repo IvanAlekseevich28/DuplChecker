@@ -1,5 +1,12 @@
 ﻿#include "textformater.h"
 
+#ifdef __linux__
+    #define SPLITER "/"
+#elif _WIN32
+    #define SPLITER "\"
+#else
+    #define SPLITER "/"
+#endif
 
 TextFormater::TextFormater()
 {
@@ -52,8 +59,8 @@ QString TextFormater::formatPaths(const CORE::FilesPair& pair, const eForm f)con
 
 void TextFormater::cutPath(QString& path1, QString& path2, bool fDelOneMore)const
 {
-    QStringList files1 = path1.split("/");
-    QStringList files2 = path2.split("/");
+    QStringList files1 = path1.split(SPLITER);
+    QStringList files2 = path2.split(SPLITER);
 
     path1.clear();
     path2.clear();
@@ -86,7 +93,7 @@ QString TextFormater::makePath(const QStringList& lst)const
     for (const auto& file : lst)
     {
         if(isNotFirst)
-            path += '/';
+            path += SPLITER;
         else
             isNotFirst = true;
 
