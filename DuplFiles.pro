@@ -11,6 +11,7 @@ CONFIG += c++14
 SOURCES += \
     UI/CLI/simpleoutput.cpp \
     UI/CLI/textoutput.cpp \
+    UI/textformater.cpp \
     app.cpp \
     core/coreadapter.cpp \
     core/duplchecker.cpp \
@@ -26,6 +27,7 @@ HEADERS += \
     IPipeUI.h \
     UI/CLI/simpleoutput.h \
     UI/CLI/textoutput.h \
+    UI/textformater.h \
     app.h \
     core/IDuplChecker.h \
     core/IHashGenerator.h \
