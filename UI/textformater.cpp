@@ -53,7 +53,7 @@ QString TextFormater::formatPaths(const CORE::FilesPair& pair, const eForm f)con
     }
 
 
-    return QString();
+    return answer;
 }
 
 

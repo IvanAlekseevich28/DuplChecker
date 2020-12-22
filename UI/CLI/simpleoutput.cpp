@@ -1,4 +1,6 @@
 #include "simpleoutput.h"
+
+#include "../textformater.h"
 #include <iostream>
 
 
@@ -13,30 +15,17 @@ SimpleOutput::SimpleOutput()
 
 bool SimpleOutput::showResults(const QList<CORE::FilesPair>& pairLst)
 {
+    TextFormater tf;
+
+    //Todo
+    auto QStrLst = tf.formatPathsList(pairLst, TextFormater::NoFullPath /*| TextFormater::ThroughEquals*/);
     bool isNotErrors = true;
-    for (const auto& p : pairLst)
+    for (const auto& p : QStrLst)
     {
-        if (!printFilesPair(p))
-        {
-            isNotErrors = false;
-            break;
-        }
+        cout << p.toStdString() << "\n";
     }
 
     return isNotErrors;
 }
 
-bool SimpleOutput::printFilesPair(const CORE::FilesPair& paths)
-{
-    cout << removeLongPath(paths.pathFile1).toStdString()
-         << " == "
-         << removeLongPath(paths.pathFile2).toStdString()
-         << "\n";
 
-    return true;
-}
-
-QString SimpleOutput::removeLongPath(const QString& str)
-{
-    return str;
-}
