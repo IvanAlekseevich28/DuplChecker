@@ -14,6 +14,7 @@ bool App::run(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     m_gui.reset(new MainWindow);
+    m_gui->setAdpter(m_core);
 
     m_gui->show();
 
