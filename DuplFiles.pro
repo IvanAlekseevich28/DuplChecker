@@ -23,7 +23,6 @@ SOURCES += \
 
 HEADERS += \
     ICore.h \
-    ILoopUI.h \
     IPipeUI.h \
     UI/CLI/simpleoutput.h \
     UI/CLI/textoutput.h \
