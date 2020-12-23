@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->listView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->centralwidget->setLayout(ui->verticalLayout);
 }
 
 MainWindow::~MainWindow()
