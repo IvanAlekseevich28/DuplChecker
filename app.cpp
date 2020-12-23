@@ -3,6 +3,7 @@
 #include "UI/CLI/textoutput.h"
 #include "UI/GUI/mainwindow.h"
 #include <QApplication>
+#include "filestatecontroller.h"
 
 
 App::App() : m_core(new CORE::CoreAdapter())
@@ -16,6 +17,15 @@ bool App::run(int argc, char *argv[])
 
     m_gui.reset(new MainWindow);
     m_gui->setAdpter(m_core);
+
+    if (argc > 0)
+    {
+        std::shared_ptr<CONTROLLER::AbstratStateController>
+                pStController(new CONTROLLER::FileStateController);
+        pStController->setPath(argv[0]);
+        m_gui->setStateController(pStController);
+        m_gui->load();
+    }
 
     m_gui->show();
 
