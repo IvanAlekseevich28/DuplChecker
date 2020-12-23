@@ -13,7 +13,7 @@ class FileStateController : public AbstratStateController
 {
 public:
     FileStateController(){};
-    ~FileStateController()override;
+    ~FileStateController()override{}
 
     bool save() override;
     bool load() override;

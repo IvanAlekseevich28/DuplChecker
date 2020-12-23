@@ -3,6 +3,7 @@
 #include <QJsonObject>
 #include <QJsonValue>
 #include <QJsonArray>
+#include <QFile>
 
 
 using namespace CONTROLLER;
@@ -42,9 +43,24 @@ public:
 
 bool FileStateController::save()
 {
-    return false;
+    QFile f(getPath());
+    if (!f.open(QFile::WriteOnly)) return false;
+
+    QJsonDocument doc(JSON_GUIState::toJson(getGUIState()));
+    f.write(doc.toJson());
+
+    f.close();
+    return true;
 }
 bool FileStateController::load()
 {
-    return false;
+    QFile f(getPath());
+    if (!f.open(QFile::ReadOnly)) return false;
+
+    QJsonDocument loadDoc(QJsonDocument::fromJson(f.readAll()));
+    setGUIState(JSON_GUIState::fromJson(loadDoc.object()));
+
+
+    f.close();
+    return true;
 }

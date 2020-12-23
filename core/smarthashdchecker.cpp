@@ -70,5 +70,20 @@ bool SmartHashDChecker::binaryCompare(const QFilePair& pair)const
 {
     if (pair.file1->fileName() == pair.file2->fileName()) return false;
 
+    QFile& f1 (*(pair.file1));
+    QFile& f2 (*(pair.file2));
+
+    auto fileSize = f1.size();
+    if (fileSize != f2.size()) return false;
+
+    if (!f1.open(QFile::ReadOnly)) return false;
+    if (!f2.open(QFile::ReadOnly)) return false;
+
+    // U can read it not all for one time. But why?
+    if (f1.readAll() != f2.readAll()) return false;
+
+    f1.close();
+    f2.close();
+
     return true;
 }

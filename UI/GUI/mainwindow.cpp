@@ -22,6 +22,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_go_released()
 {
+    save();
     goCore();
 }
 
@@ -83,8 +84,6 @@ bool MainWindow::load()
 bool MainWindow::save()
 {
     if(!m_stateController) return false;
-
-
 
     GUIState state;
     state.path1 = ui->lineEdit_path1->text();
