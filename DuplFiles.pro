@@ -18,15 +18,18 @@ SOURCES += \
     core/hashgenerator.cpp \
     core/md5hashgenerator.cpp \
     core/smarthashdchecker.cpp \
+    filestatecontroller.cpp \
     main.cpp \
     UI/GUI/mainwindow.cpp
 
 HEADERS += \
+    AbstratStateController.h \
     ICore.h \
     ILoopUI.h \
     IPipeUI.h \
     UI/CLI/simpleoutput.h \
     UI/CLI/textoutput.h \
+    UI/GUI/guistate.h \
     UI/textformater.h \
     app.h \
     core/IDuplChecker.h \
@@ -37,7 +40,8 @@ HEADERS += \
     core/hashgenerator.h \
     core/md5hashgenerator.h \
     core/smarthashdchecker.h \
-    UI/GUI/mainwindow.h
+    UI/GUI/mainwindow.h \
+    filestatecontroller.h
 
 FORMS += \
     UI/GUI/mainwindow.ui

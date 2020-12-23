@@ -4,7 +4,8 @@
 
 #include <QList>
 #include <QMainWindow>
-#include <core/coreadapter.h>
+#include "ICore.h"
+#include "AbstratStateController.h"
 
 
 namespace CONTROLLER
@@ -12,7 +13,9 @@ namespace CONTROLLER
 class ILoopUI : public QMainWindow
 {
 public:
-    virtual void setAdpter(const std::shared_ptr<CONTROLLER::ICore>& adapter)=0;
+    virtual void setAdpter(const std::shared_ptr<ICore>& adapter)=0;
+    virtual void setStateController(
+            const std::shared_ptr<AbstratStateController>& controller)=0;
 
     virtual ~ILoopUI(){}
 
