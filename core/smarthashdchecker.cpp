@@ -1,10 +1,9 @@
 #include "smarthashdchecker.h"
 
-
 using namespace CORE;
 
 
-SmartHashDChecker::SmartHashDChecker() : m_hashGen()
+SmartHashDChecker::SmartHashDChecker() : m_hash(QCryptographicHash::Algorithm::Md5)
 {
 
 }
@@ -29,21 +28,36 @@ void SmartHashDChecker::genHash(QList<QFile*>& files)
 {
     m_filesHashes.clear();
 
-    for (auto& f : files)
+    QCryptographicHash hash(QCryptographicHash::Algorithm::Md5);
+    for (auto f : files)
     {
+        hash.reset();
+        hash.addData(f);
         m_filesHashes.insert(
-                    m_hashGen.getHash(*f), f);
+                    genHash(f), f);
     }
 }
 
+QString SmartHashDChecker::genHash(QFile *file)
+{
+    file->open(QIODevice::ReadOnly);
 
-QList<SmartHashDChecker::QFilePair> SmartHashDChecker::genRawFilesList(QList<QFile*>& files)const
+    m_hash.reset();
+    m_hash.addData(file);
+
+    file->close();
+
+    return QString(m_hash.result().toHex());
+}
+
+
+QList<SmartHashDChecker::QFilePair> SmartHashDChecker::genRawFilesList(QList<QFile*>& files)
 {
     QList<SmartHashDChecker::QFilePair> answLst;
 
     for (auto pFile : files)
     {
-        auto otherFile = m_filesHashes.find(m_hashGen.getHash(*pFile));
+        auto otherFile = m_filesHashes.find(genHash(pFile));
         if (otherFile != m_filesHashes.end())
             answLst.push_back(QFilePair(*(otherFile.value()), *pFile));
     }
