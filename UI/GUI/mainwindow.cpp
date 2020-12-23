@@ -6,7 +6,7 @@
 
 
 MainWindow::MainWindow(QWidget *parent)
-    : CONTROLLER::ILoopUI(parent)
+    : CONTROLLER::AbstructLoopUI(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -17,11 +17,6 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void MainWindow::setAdpter(const std::shared_ptr<CONTROLLER::ICore> &adapter)
-{
-    m_adapter = adapter;
 }
 
 
@@ -36,9 +31,9 @@ void MainWindow::on_pushButton_go_released()
     else
         p2 = ui->lineEdit_path2->text();
 
-    if (!m_adapter) return;
+    if (!m_coreAdapter) return;
 
-    auto rawLst = m_adapter->compareTwoDirs(p1,p2);
+    auto rawLst = m_coreAdapter->compareTwoDirs(p1,p2);
 
     TextFormater tf;
     m_model.reset(new QStringListModel(tf.formatPathsList(rawLst, TextFormater::Pretty)));

@@ -24,8 +24,8 @@ SOURCES += \
 
 HEADERS += \
     AbstratStateController.h \
+    AbstructLoopUI.h \
     ICore.h \
-    ILoopUI.h \
     IPipeUI.h \
     UI/CLI/simpleoutput.h \
     UI/CLI/textoutput.h \

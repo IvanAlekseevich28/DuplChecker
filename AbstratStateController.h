@@ -3,6 +3,7 @@
 
 
 #include "UI/GUI/guistate.h"
+#include <memory>
 
 
 namespace CONTROLLER
@@ -10,8 +11,11 @@ namespace CONTROLLER
 class AbstratStateController
 {
 public:
-    virtual GUIState getGUIState()const=0;
-    virtual void setGUIState(const GUIState& state)=0;
+    GUIState getGUIState()const
+    {return !m_guiState ? GUIState() : *m_guiState;}
+
+    void setGUIState(const GUIState& state)
+    {m_guiState.reset(new GUIState(state));}
 
     virtual bool save()=0;
     virtual bool load()=0;
@@ -26,6 +30,7 @@ protected:
 
 private:
     QString m_path;
+    std::shared_ptr<GUIState> m_guiState;
 };
 }
 #endif // ABSTRACTSTATECONTROLLER_H

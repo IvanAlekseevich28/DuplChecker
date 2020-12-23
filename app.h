@@ -4,7 +4,7 @@
 
 #include <QString>
 #include "core/coreadapter.h"
-#include "ILoopUI.h"
+#include "AbstructLoopUI.h"
 
 
 class App
@@ -17,7 +17,7 @@ public:
 
 private:
     std::shared_ptr<CORE::CoreAdapter>  m_core;
-    std::unique_ptr<CONTROLLER::ILoopUI>    m_gui;
+    std::unique_ptr<CONTROLLER::AbstructLoopUI>    m_gui;
 };
 
 #endif // APP_H

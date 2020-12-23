@@ -11,7 +11,7 @@ using namespace CONTROLLER;
 class JSON_GUIState
 {
 public:
-    QJsonObject toJson(const GUIState& st)
+    static QJsonObject toJson(const GUIState& st)
     {
         QJsonObject obj;
 
@@ -22,7 +22,7 @@ public:
 
         return obj;
     }
-    GUIState    fromJson(const QJsonObject &obj)
+    static GUIState    fromJson(const QJsonObject &obj)
     {
         GUIState st;
         if (obj.contains("GUIState") && obj["GUIState"].isObject())
@@ -36,30 +36,15 @@ public:
         }
         return st;
     }
-private:
-    static QString ThisObjName;
 };
 
 
-FileStateController::FileStateController()
-{
-
-}
-
-GUIState FileStateController::getGUIState()const
-{
-
-}
-void FileStateController::setGUIState(const GUIState& state)
-{
-
-}
 
 bool FileStateController::save()
 {
-
+    return false;
 }
 bool FileStateController::load()
 {
-
+    return false;
 }

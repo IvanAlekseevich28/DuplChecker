@@ -12,11 +12,8 @@ namespace CONTROLLER
 class FileStateController : public AbstratStateController
 {
 public:
-    FileStateController();
+    FileStateController(){};
     ~FileStateController()override;
-
-    GUIState getGUIState()const override;
-    void setGUIState(const GUIState& state) override;
 
     bool save() override;
     bool load() override;
@@ -25,7 +22,6 @@ private:
 
 
 private:
-    std::shared_ptr<GUIState> m_guiState;
 
 };
 }
