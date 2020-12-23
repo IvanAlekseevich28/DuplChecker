@@ -18,11 +18,6 @@ public:
     bool save() override;
     bool load() override;
 
-private:
-
-
-private:
-
 };
 }
 

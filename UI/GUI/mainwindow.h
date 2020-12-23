@@ -19,6 +19,11 @@ public:
 
 private:
     QString selectDir();
+    bool goCore();
+
+    bool load()override;
+    bool save()override;
+
 private slots:
     void on_pushButton_go_released();
 

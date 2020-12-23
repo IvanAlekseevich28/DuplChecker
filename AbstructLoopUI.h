@@ -20,6 +20,9 @@ public:
             const std::shared_ptr<AbstratStateController>& stateController)
     {m_stateController = stateController;}
 
+    virtual bool load()=0;
+    virtual bool save()=0;
+
     virtual ~AbstructLoopUI(){}
 
 protected:
