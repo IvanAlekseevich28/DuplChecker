@@ -39,7 +39,7 @@ void MainWindow::on_pushButton_selectDir2_released()
 QString MainWindow::selectDir()
 {
     return QFileDialog::getExistingDirectory(this,
-                                             tr("Select directory"),
+                                             QString::fromUtf8("Select directory"),
                                              QDir::currentPath(),
                                              QFileDialog::Option::ShowDirsOnly);
 }
