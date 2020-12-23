@@ -15,8 +15,6 @@ SOURCES += \
     app.cpp \
     core/coreadapter.cpp \
     core/duplchecker.cpp \
-    core/hashgenerator.cpp \
-    core/md5hashgenerator.cpp \
     core/smarthashdchecker.cpp \
     filestatecontroller.cpp \
     main.cpp \
@@ -33,12 +31,9 @@ HEADERS += \
     UI/textformater.h \
     app.h \
     core/IDuplChecker.h \
-    core/IHashGenerator.h \
     core/coreadapter.h \
     core/duplchecker.h \
     core/filespair.h \
-    core/hashgenerator.h \
-    core/md5hashgenerator.h \
     core/smarthashdchecker.h \
     UI/GUI/mainwindow.h \
     filestatecontroller.h

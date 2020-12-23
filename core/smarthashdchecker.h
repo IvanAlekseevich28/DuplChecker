@@ -4,7 +4,7 @@
 
 #include "IDuplChecker.h"
 #include <QHash>
-#include "hashgenerator.h"
+#include <QCryptographicHash>
 
 
 namespace CORE
@@ -29,14 +29,15 @@ private:
     };
 private:
     void genHash(QList<QFile *> &files);
-    QList<QFilePair> genRawFilesList(QList<QFile *> &files)const;
+    QString genHash(QFile *file);
+    QList<QFilePair> genRawFilesList(QList<QFile *> &files);
     QList<FilesPair> binaryChecker(QList<QFilePair>& rawLst)const;
     bool binaryCompare(const QFilePair &pair)const;
 
 
 private:
     QHash<QString, QFile*> m_filesHashes;
-    HashGenerator   m_hashGen;
+    QCryptographicHash m_hash;
 
 };
 }
