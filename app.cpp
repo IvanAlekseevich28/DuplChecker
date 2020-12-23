@@ -22,7 +22,7 @@ bool App::run(int argc, char *argv[])
     {
         std::shared_ptr<CONTROLLER::AbstratStateController>
                 pStController(new CONTROLLER::FileStateController);
-        pStController->setPath(argv[0]);
+        pStController->setPath(QString(argv[0]) + "_gui_save.txt");
         m_gui->setStateController(pStController);
         m_gui->load();
     }
