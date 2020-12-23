@@ -16,7 +16,8 @@ public:
         None            = 0x1,
         ThroughEquals   = 0x2,
 //        TwoColumn       = 0x4,
-        NoFullPath      = 0x8
+        NoFullPath      = 0x8,
+        Pretty          = ThroughEquals | NoFullPath
     };
     QStringList formatPathsList(const QList<CORE::FilesPair>& pairLst, const eForm f)const;
 

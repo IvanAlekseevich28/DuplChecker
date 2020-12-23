@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->listView->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
 MainWindow::~MainWindow()
@@ -17,7 +18,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::setAdpter(const std::shared_ptr<CORE::CoreAdapter> &adapter)
+void MainWindow::setAdpter(const std::shared_ptr<CONTROLLER::ICore> &adapter)
 {
     m_adapter = adapter;
 }
@@ -39,7 +40,7 @@ void MainWindow::on_pushButton_go_released()
     auto rawLst = m_adapter->compareTwoDirs(p1,p2);
 
     TextFormater tf;
-    m_model.reset(new QStringListModel(tf.formatPathsList(rawLst, TextFormater::NoFullPath)));
+    m_model.reset(new QStringListModel(tf.formatPathsList(rawLst, TextFormater::Pretty)));
 
 
     ui->listView->setModel(m_model.get());
@@ -58,7 +59,10 @@ void MainWindow::on_pushButton_selectDir2_released()
 
 QString MainWindow::selectDir()
 {
-    return QFileDialog::getOpenFileName(this, "Open directory or file");
+    return QFileDialog::getExistingDirectory(this,
+                                             QString::fromUtf8("Select directory"),
+                                             QDir::currentPath(),
+                                             QFileDialog::Option::ShowDirsOnly);
 }
 
 

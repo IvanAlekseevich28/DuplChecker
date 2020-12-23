@@ -17,7 +17,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void setAdpter(const std::shared_ptr<CORE::CoreAdapter> &adapter)override;
+    void setAdpter(const std::shared_ptr<CONTROLLER::ICore> &adapter)override;
 
 private:
     QString selectDir();
@@ -30,7 +30,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    std::shared_ptr<CORE::CoreAdapter> m_adapter;
+    std::shared_ptr<CONTROLLER::ICore> m_adapter;
     std::unique_ptr<QStringListModel> m_model;
 };
 #endif // MAINWINDOW_H

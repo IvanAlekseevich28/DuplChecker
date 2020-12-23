@@ -12,7 +12,7 @@ namespace CONTROLLER
 class ILoopUI : public QMainWindow
 {
 public:
-    virtual void setAdpter(const std::shared_ptr<CORE::CoreAdapter>& adapter)=0;
+    virtual void setAdpter(const std::shared_ptr<CONTROLLER::ICore>& adapter)=0;
 
     virtual ~ILoopUI(){}
 
