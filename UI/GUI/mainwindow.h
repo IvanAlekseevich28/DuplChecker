@@ -33,7 +33,7 @@ private slots:
     void on_pushButton_selectDir2_released();
 
 private:
-    Ui::MainWindow *ui;
+    std::unique_ptr<Ui::MainWindow> m_ui;
     std::unique_ptr<QStringListModel> m_model;
 };
 }
