@@ -26,7 +26,5 @@ private:
     void cutPath(QString &path1, QString &path2, bool fDelOneMore = true)const;
     QString makePath(const QStringList& lst)const;
 };
-<<<<<<< HEAD
 }
-=======
->>>>>>> 301e9eb3d473f2993fca763422e4693cb196ffe4
+

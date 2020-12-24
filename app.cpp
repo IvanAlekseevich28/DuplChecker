@@ -4,7 +4,6 @@
 #include "UI/GUI/mainwindow.h"
 #include <QApplication>
 #include "controller/filestatecontroller.h"
-<<<<<<< HEAD
 #include <QApplication>
 #include <QStringList>
 
@@ -18,8 +17,6 @@
 
 
 using namespace dupl;
-=======
->>>>>>> 301e9eb3d473f2993fca763422e4693cb196ffe4
 
 
 App::App() : m_core(new CoreAdapter())
