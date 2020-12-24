@@ -1,8 +1,6 @@
-#ifndef TEXTOUTPUT_H
-#define TEXTOUTPUT_H
+#pragma once
 
-
-#include "../../IPipeUI.h"
+#include "../../controller/ipipeui.h"
 #include <memory>
 
 
@@ -20,4 +18,3 @@ private:
     std::unique_ptr<CONTROLLER::IPipeUI> m_output;
 };
 }
-#endif // TEXTOUTPUT_H

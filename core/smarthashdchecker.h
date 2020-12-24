@@ -1,8 +1,6 @@
-#ifndef SMARTHASHDCHECKER_H
-#define SMARTHASHDCHECKER_H
+#pragma once
 
-
-#include "IDuplChecker.h"
+#include "iduplchecker.h"
 #include <QHash>
 #include <QCryptographicHash>
 
@@ -41,4 +39,3 @@ private:
 
 };
 }
-#endif // SMARTHASHDCHECKER_H

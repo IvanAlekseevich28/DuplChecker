@@ -1,6 +1,4 @@
-#ifndef TEXTFORMATER_H
-#define TEXTFORMATER_H
-
+#pragma once
 
 #include <QStringList>
 #include "../core/filespair.h"
@@ -26,5 +24,3 @@ private:
     void cutPath(QString &path1, QString &path2, bool fDelOneMore = true)const;
     QString makePath(const QStringList& lst)const;
 };
-
-#endif // TEXTFORMATER_H

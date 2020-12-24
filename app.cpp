@@ -3,7 +3,7 @@
 #include "UI/CLI/textoutput.h"
 #include "UI/GUI/mainwindow.h"
 #include <QApplication>
-#include "filestatecontroller.h"
+#include "controller/filestatecontroller.h"
 
 
 App::App() : m_core(new CORE::CoreAdapter())

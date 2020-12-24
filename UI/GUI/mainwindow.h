@@ -1,7 +1,6 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
-#include "../../AbstructLoopUI.h"
+#include "../../controller/baseloopui.h"
 #include <QStringListModel>
 
 
@@ -35,4 +34,3 @@ private:
     Ui::MainWindow *ui;
     std::unique_ptr<QStringListModel> m_model;
 };
-#endif // MAINWINDOW_H

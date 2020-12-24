@@ -1,6 +1,4 @@
-#ifndef IDUPLCHECKER_H
-#define IDUPLCHECKER_H
-
+#pragma once
 
 #include <QFile>
 #include <QList>
@@ -24,4 +22,3 @@ protected:
 
 };
 }
-#endif // IDUPLCHECKER_H
