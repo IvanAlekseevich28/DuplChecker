@@ -16,15 +16,15 @@ SOURCES += \
     core/coreadapter.cpp \
     core/duplchecker.cpp \
     core/smarthashdchecker.cpp \
-    filestatecontroller.cpp \
+    controller/filestatecontroller.cpp \
     main.cpp \
     UI/GUI/mainwindow.cpp
 
 HEADERS += \
-    AbstratStateController.h \
-    AbstructLoopUI.h \
-    ICore.h \
-    IPipeUI.h \
+    controller/AbstratStateController.h \
+    controller/AbstructLoopUI.h \
+    controller/ICore.h \
+    controller/IPipeUI.h \
     UI/CLI/simpleoutput.h \
     UI/CLI/textoutput.h \
     UI/GUI/guistate.h \
@@ -36,7 +36,7 @@ HEADERS += \
     core/filespair.h \
     core/smarthashdchecker.h \
     UI/GUI/mainwindow.h \
-    filestatecontroller.h
+    controller/filestatecontroller.h
 
 FORMS += \
     UI/GUI/mainwindow.ui
