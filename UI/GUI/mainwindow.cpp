@@ -8,7 +8,7 @@
 using namespace dupl;
 
 MainWindow::MainWindow(QWidget *parent)
-    : AbstructLoopUI(parent)
+    : BaseLoopUI(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);

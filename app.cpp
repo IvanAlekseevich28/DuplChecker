@@ -39,11 +39,11 @@ bool App::runGUI(int argc, char *argv[])
     QApplication app(argc, argv);
 
     m_gui.reset(new MainWindow);
-    m_gui->setAdpter(m_core);
+    m_gui->setCore(m_core);
 
     if (!startPath.isEmpty())
     {
-        std::shared_ptr<AbstratStateController>
+        std::shared_ptr<IStateController>
                 pStController(new FileStateController);
         pStController->setPath(QString(startPath) + "_gui_save.txt");
         m_gui->setStateController(pStController);

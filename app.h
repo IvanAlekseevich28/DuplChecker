@@ -4,7 +4,7 @@
 
 #include <QString>
 #include "core/coreadapter.h"
-#include "controller/baseloopui.h"
+#include "controller/iloopui.h"
 
 namespace dupl
 {
@@ -23,7 +23,7 @@ private:
 
 private:
     std::shared_ptr<CoreAdapter>  m_core;
-    std::unique_ptr<AbstructLoopUI>    m_gui;
+    std::unique_ptr<ILoopUI>    m_gui;
 };
 }
 
