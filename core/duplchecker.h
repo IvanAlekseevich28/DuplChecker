@@ -1,11 +1,10 @@
-#ifndef DUPLCHECKER_H
-#define DUPLCHECKER_H
+#pragma once
 
-#include "IDuplChecker.h"
+#include "iduplchecker.h"
 #include <memory>
 
 
-namespace CORE
+namespace dupl
 {
 struct FilesPair;
 class DuplChecker
@@ -27,4 +26,3 @@ private:
     std::unique_ptr<IDuplChecker> m_duplChecker;
 };
 }
-#endif // DUPLCHECKER_H

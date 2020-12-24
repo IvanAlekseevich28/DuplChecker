@@ -1,13 +1,11 @@
-#ifndef SMARTHASHDCHECKER_H
-#define SMARTHASHDCHECKER_H
+#pragma once
 
-
-#include "IDuplChecker.h"
+#include "iduplchecker.h"
 #include <QHash>
 #include <QCryptographicHash>
 
 
-namespace CORE
+namespace dupl
 {
 class SmartHashDChecker : public IDuplChecker
 {
@@ -41,4 +39,3 @@ private:
 
 };
 }
-#endif // SMARTHASHDCHECKER_H

@@ -8,13 +8,15 @@
     #define SPLITER "/"
 #endif
 
+using namespace dupl;
+
 TextFormater::TextFormater()
 {
 
 }
 
 
-QStringList TextFormater::formatPathsList(const QList<CORE::FilesPair>& pairLst, const eForm f)const
+QStringList TextFormater::formatPathsList(const QList<FilesPair>& pairLst, const eForm f)const
 {
     QStringList answerLst;
     for (const auto& p : pairLst)
@@ -26,7 +28,7 @@ QStringList TextFormater::formatPathsList(const QList<CORE::FilesPair>& pairLst,
 }
 
 
-QString TextFormater::formatPaths(const CORE::FilesPair& pair, const eForm f)const
+QString TextFormater::formatPaths(const FilesPair& pair, const eForm f)const
 {
     QString answer;
     QString p1(pair.pathFile1), p2(pair.pathFile2);

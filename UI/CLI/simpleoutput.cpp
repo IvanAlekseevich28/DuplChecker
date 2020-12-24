@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-using namespace CLI;
+using namespace dupl;
 using namespace std;
 
 
@@ -13,7 +13,7 @@ SimpleOutput::SimpleOutput()
 
 }
 
-bool SimpleOutput::showResults(const QList<CORE::FilesPair>& pairLst)
+bool SimpleOutput::showResults(const QList<FilesPair>& pairLst)
 {
     TextFormater tf;
 

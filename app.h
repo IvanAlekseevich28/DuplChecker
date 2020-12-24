@@ -4,9 +4,10 @@
 
 #include <QString>
 #include "core/coreadapter.h"
-#include "AbstructLoopUI.h"
+#include "controller/baseloopui.h"
 
-
+namespace dupl
+{
 class App
 {
 public:
@@ -16,8 +17,9 @@ public:
     bool run(char* path0, char* path1, char* path2);
 
 private:
-    std::shared_ptr<CORE::CoreAdapter>  m_core;
-    std::unique_ptr<CONTROLLER::AbstructLoopUI>    m_gui;
+    std::shared_ptr<CoreAdapter>  m_core;
+    std::unique_ptr<AbstructLoopUI>    m_gui;
 };
+}
 
 #endif // APP_H

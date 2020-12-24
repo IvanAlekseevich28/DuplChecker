@@ -1,19 +1,16 @@
-#ifndef SIMPLEOUTPUT_H
-#define SIMPLEOUTPUT_H
+#pragma once
+
+#include "../../controller/ipipeui.h"
 
 
-#include "../../IPipeUI.h"
-
-
-namespace CLI
+namespace dupl
 {
-class SimpleOutput : public CONTROLLER::IPipeUI
+class SimpleOutput : public IPipeUI
 {
 public:
     SimpleOutput();
 
-    bool showResults(const QList<CORE::FilesPair>& pairLst)override;
+    bool showResults(const QList<FilesPair>& pairLst)override;
 
 };
 }
-#endif // SIMPLEOUTPUT_H

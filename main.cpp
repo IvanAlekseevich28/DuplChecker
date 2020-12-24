@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[])
 {
-    App app;
+    dupl::App app;
     bool appError = 0;
     if (argc == 3)
     {

@@ -1,6 +1,6 @@
 #include "smarthashdchecker.h"
 
-using namespace CORE;
+using namespace dupl;
 
 
 SmartHashDChecker::SmartHashDChecker() : m_hash(QCryptographicHash::Algorithm::Md5)

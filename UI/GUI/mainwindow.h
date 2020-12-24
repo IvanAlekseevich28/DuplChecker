@@ -1,7 +1,6 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
-#include "../../AbstructLoopUI.h"
+#include "../../controller/baseloopui.h"
 #include <QStringListModel>
 
 
@@ -9,7 +8,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MainWindow : public CONTROLLER::AbstructLoopUI
+class MainWindow : public dupl::AbstructLoopUI
 {
     Q_OBJECT
 
@@ -35,4 +34,3 @@ private:
     Ui::MainWindow *ui;
     std::unique_ptr<QStringListModel> m_model;
 };
-#endif // MAINWINDOW_H

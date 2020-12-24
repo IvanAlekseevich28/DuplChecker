@@ -1,23 +1,20 @@
-#ifndef TEXTOUTPUT_H
-#define TEXTOUTPUT_H
+#pragma once
 
-
-#include "../../IPipeUI.h"
+#include "../../controller/ipipeui.h"
 #include <memory>
 
 
-namespace CLI
+namespace dupl
 {
 class TextOutput
 {
 public:
     TextOutput();
 
-    bool print(const QList<CORE::FilesPair>& pairLst);
+    bool print(const QList<FilesPair>& pairLst);
 
     void setTypeOutput();
 private:
-    std::unique_ptr<CONTROLLER::IPipeUI> m_output;
+    std::unique_ptr<IPipeUI> m_output;
 };
 }
-#endif // TEXTOUTPUT_H

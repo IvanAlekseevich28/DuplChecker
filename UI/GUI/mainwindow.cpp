@@ -5,8 +5,10 @@
 #include "UI/textformater.h"
 
 
+using namespace dupl;
+
 MainWindow::MainWindow(QWidget *parent)
-    : CONTROLLER::AbstructLoopUI(parent)
+    : AbstructLoopUI(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);

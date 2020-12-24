@@ -3,7 +3,7 @@
 #include "smarthashdchecker.h"
 
 
-using namespace CORE;
+using namespace dupl;
 
 
 DuplChecker::DuplChecker()

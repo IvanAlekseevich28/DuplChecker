@@ -1,17 +1,15 @@
-#ifndef COREADAPTER_H
-#define COREADAPTER_H
+#pragma once
 
-
-#include "../ICore.h"
+#include "../controller/icore.h"
 #include <QList>
 #include <QFile>
 #include <memory>
 
 
-namespace CORE
+namespace dupl
 {
 class DuplChecker;
-class CoreAdapter : public CONTROLLER::ICore
+class CoreAdapter : public ICore
 {
 public:
     CoreAdapter();
@@ -27,5 +25,3 @@ private:
     std::unique_ptr<DuplChecker> m_adaptee;
 };
 }
-
-#endif // COREADAPTER_H

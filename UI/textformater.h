@@ -1,11 +1,11 @@
-#ifndef TEXTFORMATER_H
-#define TEXTFORMATER_H
-
+#pragma once
 
 #include <QStringList>
 #include "../core/filespair.h"
 
 
+namespace dupl
+{
 class TextFormater
 {
 public:
@@ -19,12 +19,11 @@ public:
         NoFullPath      = 0x8,
         Pretty          = ThroughEquals | NoFullPath
     };
-    QStringList formatPathsList(const QList<CORE::FilesPair>& pairLst, const eForm f)const;
+    QStringList formatPathsList(const QList<FilesPair>& pairLst, const eForm f)const;
 
 private:
-    QString formatPaths(const CORE::FilesPair& pair, const eForm f)const;
+    QString formatPaths(const FilesPair& pair, const eForm f)const;
     void cutPath(QString &path1, QString &path2, bool fDelOneMore = true)const;
     QString makePath(const QStringList& lst)const;
 };
-
-#endif // TEXTFORMATER_H
+}

@@ -4,7 +4,7 @@
 #include "duplchecker.h"
 
 
-using namespace CORE;
+using namespace dupl;
 
 
 CoreAdapter::CoreAdapter() : m_adaptee(new DuplChecker())

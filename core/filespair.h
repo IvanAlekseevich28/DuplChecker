@@ -1,12 +1,10 @@
-#ifndef FILESPAIR_H
-#define FILESPAIR_H
-
+#pragma once
 
 #include <QList>
 #include <QString>
 
 
-namespace CORE
+namespace dupl
 {
 struct FilesPair
 {
@@ -17,4 +15,3 @@ struct FilesPair
     QString pathFile2;
 };
 }
-#endif // FILESPAIR_H

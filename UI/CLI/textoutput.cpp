@@ -3,7 +3,7 @@
 #include "simpleoutput.h"
 
 
-using namespace CLI;
+using namespace dupl;
 
 
 TextOutput::TextOutput()
@@ -11,7 +11,7 @@ TextOutput::TextOutput()
     setTypeOutput();
 }
 
-bool TextOutput::print(const QList<CORE::FilesPair>& pairLst)
+bool TextOutput::print(const QList<FilesPair>& pairLst)
 {
     if (!m_output) return false;
 
