@@ -4,7 +4,12 @@
 
 #include <QString>
 #include "core/coreadapter.h"
+<<<<<<< HEAD
 #include "controller/iloopui.h"
+=======
+#include "controller/baseloopui.h"
+
+>>>>>>> 301e9eb3d473f2993fca763422e4693cb196ffe4
 
 namespace dupl
 {

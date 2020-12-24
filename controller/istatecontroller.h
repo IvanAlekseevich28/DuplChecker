@@ -1,4 +1,5 @@
 #pragma once
+<<<<<<< HEAD
 
 #include "UI/GUI/guistate.h"
 #include <memory>
@@ -24,3 +25,5 @@ protected:
     IStateController() {}
 };
 }
+=======
+>>>>>>> 301e9eb3d473f2993fca763422e4693cb196ffe4

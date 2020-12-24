@@ -37,3 +37,4 @@ private:
     std::unique_ptr<QStringListModel> m_model;
 };
 }
+
