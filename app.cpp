@@ -3,7 +3,7 @@
 #include "UI/CLI/textoutput.h"
 #include "UI/GUI/mainwindow.h"
 #include <QApplication>
-#include "controller/filestatecontroller.h"
+#include "controller/statecontrollerfactory.h"
 #include <QApplication>
 #include <QStringList>
 
@@ -44,7 +44,7 @@ bool App::runGUI(int argc, char *argv[])
     if (!startPath.isEmpty())
     {
         std::shared_ptr<IStateController>
-                pStController(new FileStateController);
+                pStController(StateControllerFactory::getStateController());
         pStController->setPath(QString(startPath) + "_gui_save.txt");
         m_gui->setStateController(pStController);
         m_gui->load();

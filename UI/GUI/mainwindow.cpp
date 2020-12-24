@@ -56,9 +56,9 @@ bool MainWindow::goCore()
     else
         p2 = m_ui->lineEdit_path2->text();
 
-    if (!m_coreAdapter) return false;
+    if (!m_core) return false;
 
-    auto rawLst = m_coreAdapter->compareTwoDirs(p1,p2);
+    auto rawLst = m_core->compareTwoDirs(p1,p2);
 
     TextFormater tf;
     m_model.reset(new QStringListModel(tf.formatPathsList(rawLst, TextFormater::Pretty)));

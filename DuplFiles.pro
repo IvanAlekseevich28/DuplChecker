@@ -13,6 +13,7 @@ SOURCES += \
     UI/CLI/textoutput.cpp \
     UI/textformater.cpp \
     app.cpp \
+    controller/statecontrollerfactory.cpp \
     core/coreadapter.cpp \
     core/duplchecker.cpp \
     core/smarthashdchecker.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     controller/iloopui.h \
     controller/ipipeui.h \
     controller/istatecontroller.h \
+    controller/statecontrollerfactory.h \
     core/coreadapter.h \
     core/duplchecker.h \
     core/filespair.h \
