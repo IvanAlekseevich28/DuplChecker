@@ -21,19 +21,21 @@ SOURCES += \
     UI/GUI/mainwindow.cpp
 
 HEADERS += \
-    controller/AbstratStateController.h \
-    controller/AbstructLoopUI.h \
-    controller/ICore.h \
-    controller/IPipeUI.h \
     UI/CLI/simpleoutput.h \
     UI/CLI/textoutput.h \
     UI/GUI/guistate.h \
     UI/textformater.h \
     app.h \
-    core/IDuplChecker.h \
+    controller/baseloopui.h \
+    controller/basestatecontroller.h \
+    controller/icore.h \
+    controller/iloopui.h \
+    controller/ipipeui.h \
+    controller/istatecontroller.h \
     core/coreadapter.h \
     core/duplchecker.h \
     core/filespair.h \
+    core/iduplchecker.h \
     core/smarthashdchecker.h \
     UI/GUI/mainwindow.h \
     controller/filestatecontroller.h

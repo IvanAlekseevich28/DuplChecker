@@ -1,8 +1,6 @@
-#ifndef SIMPLEOUTPUT_H
-#define SIMPLEOUTPUT_H
+#pragma once
 
-
-#include "../../IPipeUI.h"
+#include "../../controller/ipipeui.h"
 
 
 namespace CLI
@@ -16,4 +14,3 @@ public:
 
 };
 }
-#endif // SIMPLEOUTPUT_H
