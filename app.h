@@ -14,7 +14,12 @@ public:
     App();
 
     bool run(int argc, char *argv[]);
-    bool run(char* path0, char* path1, char* path2);
+
+private:
+    bool runGUI(int argc, char *argv[]);
+    bool runCLI(int argc, char *argv[]);
+    QString supplementPath(const QString &firstPath,
+                           const QString& shortPath)const;
 
 private:
     std::shared_ptr<CoreAdapter>  m_core;

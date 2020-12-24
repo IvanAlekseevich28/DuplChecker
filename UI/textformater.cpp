@@ -3,7 +3,7 @@
 #ifdef __linux__
     #define SPLITER "/"
 #elif _WIN32
-    #define SPLITER "\"
+    #define SPLITER "\\"
 #else
     #define SPLITER "/"
 #endif

@@ -17,8 +17,7 @@ bool SimpleOutput::showResults(const QList<FilesPair>& pairLst)
 {
     TextFormater tf;
 
-    //Todo
-    auto QStrLst = tf.formatPathsList(pairLst, TextFormater::NoFullPath /*| TextFormater::ThroughEquals*/);
+    auto QStrLst = tf.formatPathsList(pairLst, TextFormater::Pretty);
     bool isNotErrors = true;
     for (const auto& p : QStrLst)
     {
