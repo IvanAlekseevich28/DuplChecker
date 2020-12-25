@@ -4,8 +4,7 @@
 #include <QHash>
 #include <QCryptographicHash>
 
-
-namespace dupl
+namespace Dupl
 {
 class SmartHashDChecker : public IDuplChecker
 {
@@ -26,11 +25,11 @@ private:
         QFile* file2;
     };
 private:
-    void genHash(QList<QFile *> &files);
-    QString genHash(QFile *file);
-    QList<QFilePair> genRawFilesList(QList<QFile *> &files);
-    QList<FilesPair> binaryChecker(QList<QFilePair>& rawLst)const;
-    bool binaryCompare(const QFilePair &pair)const;
+    void genHash(QList<QFile*> &files);
+    QString genHash(QFile* file);
+    QList<QFilePair> genRawFilesList(QList<QFile*>& files);
+    QList<FilesPair> binaryChecker(QList<QFilePair>& rawList)const;
+    bool binaryCompare(const QFilePair& pair)const;
 
 
 private:

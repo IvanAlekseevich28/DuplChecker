@@ -5,7 +5,7 @@
 #include "UI/textformater.h"
 
 
-using namespace dupl;
+using namespace Dupl;
 
 MainWindow::MainWindow(QWidget *parent)
     : BaseLoopUI(parent)
@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+
 }
 
 
@@ -58,10 +59,10 @@ bool MainWindow::goCore()
 
     if (!m_core) return false;
 
-    auto rawLst = m_core->compareTwoDirs(p1,p2);
+    auto rawList = m_core->compareTwoDirs(p1,p2);
 
     TextFormater tf;
-    m_model.reset(new QStringListModel(tf.formatPathsList(rawLst, TextFormater::Pretty)));
+    m_model.reset(new QStringListModel(tf.formatPathsList(rawList, TextFormater::Pretty)));
 
 
     m_ui->listView->setModel(m_model.get());

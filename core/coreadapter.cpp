@@ -3,9 +3,7 @@
 #include <QDirIterator>
 #include "duplchecker.h"
 
-
-using namespace dupl;
-
+using namespace Dupl;
 
 CoreAdapter::CoreAdapter() : m_adaptee(new DuplChecker())
 {
@@ -20,8 +18,8 @@ CoreAdapter::~CoreAdapter()
 QList<FilesPair> CoreAdapter::compareTwoDirs(const QString& dir1, const QString& dir2)
 {
 
-    QList<QFile*> files1 = getPtrFilesLst(dir1);
-    QList<QFile*> files2 = getPtrFilesLst(dir2);
+    QList<QFile*> files1 = getFilesList(dir1);
+    QList<QFile*> files2 = getFilesList(dir2);
 
     auto answer = m_adaptee->getDuplicationFilesPaths(files1, files2);
 
@@ -31,21 +29,21 @@ QList<FilesPair> CoreAdapter::compareTwoDirs(const QString& dir1, const QString&
     return answer;
 }
 
-QList<QFile*> CoreAdapter::getPtrFilesLst(const QString& dir)
+QList<QFile*> CoreAdapter::getFilesList(const QString& dir)
 {
-    QList<QFile*> filesLst;
+    QList<QFile*> filesList;
     QDirIterator ItR(dir,  QDir::Files, QDirIterator::Subdirectories);
     while (ItR.hasNext()) {
         auto p (new QFile(ItR.next()));
-        filesLst.push_back(p);
+        filesList.push_back(p);
     }
 
-    return filesLst;
+    return filesList;
 }
 
-void CoreAdapter::clearFiles(QList<QFile*> &fLst)
+void CoreAdapter::clearFiles(QList<QFile*> &fList)
 {
-    for (auto p : fLst)
+    for (auto p : fList)
     {
         if (p)
         {

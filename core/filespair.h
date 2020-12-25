@@ -3,8 +3,7 @@
 #include <QList>
 #include <QString>
 
-
-namespace dupl
+namespace Dupl
 {
 struct FilesPair
 {

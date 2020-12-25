@@ -1,7 +1,6 @@
 #include "smarthashdchecker.h"
 
-using namespace dupl;
-
+using namespace Dupl;
 
 SmartHashDChecker::SmartHashDChecker() : m_hash(QCryptographicHash::Algorithm::Md5)
 {
@@ -13,16 +12,14 @@ SmartHashDChecker::~SmartHashDChecker()
 
 }
 
-
-QList<FilesPair> SmartHashDChecker::getDuplicationFilesPaths(QList<QFile *> &files1,
-                                                                QList<QFile *> &files2)
+QList<FilesPair> SmartHashDChecker::getDuplicationFilesPaths(QList<QFile*>& files1,
+                                                                QList<QFile*>& files2)
 {
     genHash(files1);
-    auto rawLst = genRawFilesList(files2);
+    auto rawList = genRawFilesList(files2);
 
-    return binaryChecker(rawLst);
+    return binaryChecker(rawList);
 }
-
 
 void SmartHashDChecker::genHash(QList<QFile*>& files)
 {
@@ -38,7 +35,7 @@ void SmartHashDChecker::genHash(QList<QFile*>& files)
     }
 }
 
-QString SmartHashDChecker::genHash(QFile *file)
+QString SmartHashDChecker::genHash(QFile* file)
 {
     file->open(QIODevice::ReadOnly);
 
@@ -50,35 +47,31 @@ QString SmartHashDChecker::genHash(QFile *file)
     return QString(m_hash.result().toHex());
 }
 
-
 QList<SmartHashDChecker::QFilePair> SmartHashDChecker::genRawFilesList(QList<QFile*>& files)
 {
-    QList<SmartHashDChecker::QFilePair> answLst;
+    QList<SmartHashDChecker::QFilePair> answList;
 
     for (auto pFile : files)
     {
         auto otherFile = m_filesHashes.find(genHash(pFile));
         if (otherFile != m_filesHashes.end())
-            answLst.push_back(QFilePair(*(otherFile.value()), *pFile));
+            answList.push_back(QFilePair(*(otherFile.value()), *pFile));
     }
 
-    return answLst;
+    return answList;
 }
 
-
-QList<FilesPair> SmartHashDChecker::binaryChecker(QList<QFilePair>& rawLst)const
+QList<FilesPair> SmartHashDChecker::binaryChecker(QList<QFilePair>& rawList)const
 {
-    QList<FilesPair> answLst;
-//    auto iter = rawLst.begin(); iter != rawLst.end(); iter++
-    for (auto& pair : rawLst)
+    QList<FilesPair> answList;
+    for (auto& pair : rawList)
     {
         if (binaryCompare(pair))
-            answLst.push_back(FilesPair(pair.file1->fileName(), pair.file2->fileName()));
+            answList.push_back(FilesPair(pair.file1->fileName(), pair.file2->fileName()));
     }
 
-    return answLst;
+    return answList;
 }
-
 
 bool SmartHashDChecker::binaryCompare(const QFilePair& pair)const
 {

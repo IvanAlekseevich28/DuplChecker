@@ -2,8 +2,7 @@
 
 #include "istatecontroller.h"
 
-
-namespace dupl
+namespace Dupl
 {
 class StateControllerFactory
 {

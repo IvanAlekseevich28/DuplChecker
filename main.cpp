@@ -2,10 +2,8 @@
 
 int main(int argc, char *argv[])
 {
-    dupl::App myApp;
-
-    myApp.run(argc, argv);
-
+    Dupl::App app;
+    app.run(argc, argv);
 
     return 0;
 }

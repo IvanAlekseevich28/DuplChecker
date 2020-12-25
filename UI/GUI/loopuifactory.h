@@ -3,8 +3,7 @@
 #include "../../controller/iloopui.h"
 #include <memory>
 
-
-namespace dupl
+namespace Dupl
 {
 
 class LoopUIFactory

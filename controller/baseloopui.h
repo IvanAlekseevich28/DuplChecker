@@ -5,8 +5,7 @@
 #include "icore.h"
 #include "iloopui.h"
 
-
-namespace dupl
+namespace Dupl
 {
 class BaseLoopUI : public QMainWindow, public ILoopUI
 {

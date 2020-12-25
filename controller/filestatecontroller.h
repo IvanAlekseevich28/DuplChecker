@@ -2,14 +2,13 @@
 
 #include "basestatecontroller.h"
 
-
-namespace dupl
+namespace Dupl
 {
 class FileStateController : public BaseStateController
 {
 public:
     FileStateController(){};
-    ~FileStateController()override{}
+    ~FileStateController() override{}
 
     bool save() override;
     bool load() override;

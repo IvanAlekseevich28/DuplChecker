@@ -5,21 +5,20 @@
 #include <QFile>
 #include <memory>
 
-
-namespace dupl
+namespace Dupl
 {
 class DuplChecker;
 class CoreAdapter : public ICore
 {
 public:
     CoreAdapter();
-    ~CoreAdapter();
+    ~CoreAdapter() override;
 
-    QList<FilesPair> compareTwoDirs(const QString& dir1, const QString& dir2)override;
+    QList<FilesPair> compareTwoDirs(const QString& dir1, const QString& dir2) override;
 
 private:
-    QList<QFile*> getPtrFilesLst(const QString& dir);
-    void clearFiles(QList<QFile*> &fLst);
+    QList<QFile*> getFilesList(const QString& dir);
+    void clearFiles(QList<QFile*> &fList);
 
 private:
     std::unique_ptr<DuplChecker> m_adaptee;

@@ -3,8 +3,7 @@
 #include "UI/GUI/guistate.h"
 #include <memory>
 
-
-namespace dupl
+namespace Dupl
 {
 class IStateController
 {

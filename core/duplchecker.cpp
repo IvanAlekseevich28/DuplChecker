@@ -2,9 +2,7 @@
 
 #include "smarthashdchecker.h"
 
-
-using namespace dupl;
-
+using namespace Dupl;
 
 DuplChecker::DuplChecker()
 {
@@ -19,7 +17,6 @@ QList<FilesPair> DuplChecker::getDuplicationFilesPaths(QList<QFile *> &files1,
     return m_duplChecker->getDuplicationFilesPaths(files1, files2);
 }
 
-
 void DuplChecker::setDuplicateChackerAlg(eAlg ealg)
 {
     switch (ealg)
@@ -27,4 +24,3 @@ void DuplChecker::setDuplicateChackerAlg(eAlg ealg)
     case DuplChecker::SmartHash: m_duplChecker.reset(new SmartHashDChecker); break;
     }
 }
-

@@ -3,13 +3,12 @@
 #include "core/filespair.h"
 #include <QList>
 
-
-namespace dupl
+namespace Dupl
 {
 class IPipeUI
 {
 public:
-    virtual bool showResults(const QList<FilesPair>& pairLst)=0;
+    virtual bool showResults(const QList<FilesPair>& pairList)=0;
 
     virtual ~IPipeUI(){}
 

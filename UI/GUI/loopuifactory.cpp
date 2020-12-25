@@ -3,7 +3,7 @@
 #include "mainwindow.h"
 
 
-using namespace dupl;
+using namespace Dupl;
 
 LoopUIFactory::LoopUIFactory()
 {

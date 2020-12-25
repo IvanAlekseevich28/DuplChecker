@@ -3,12 +3,11 @@
 #include "../../controller/baseloopui.h"
 #include <QStringListModel>
 
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-namespace dupl
+namespace Dupl
 {
 class MainWindow : public BaseLoopUI
 {
@@ -16,14 +15,14 @@ class MainWindow : public BaseLoopUI
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    ~MainWindow() override;
 
 private:
     QString selectDir();
     bool goCore();
 
-    bool load()override;
-    bool save()override;
+    bool load() override;
+    bool save() override;
 
 private slots:
     void on_pushButton_go_released();

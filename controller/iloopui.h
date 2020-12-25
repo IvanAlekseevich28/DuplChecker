@@ -3,8 +3,7 @@
 #include "icore.h"
 #include "istatecontroller.h"
 
-
-namespace dupl
+namespace Dupl
 {
 class ILoopUI
 {

@@ -2,8 +2,7 @@
 
 #include "core/filespair.h"
 
-
-namespace dupl
+namespace Dupl
 {
 class ICore
 {

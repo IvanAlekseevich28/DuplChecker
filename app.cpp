@@ -16,7 +16,7 @@
 #endif
 
 
-using namespace dupl;
+using namespace Dupl;
 
 
 App::App() : m_core(new CoreAdapter())

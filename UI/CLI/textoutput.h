@@ -3,15 +3,15 @@
 #include "../../controller/ipipeui.h"
 #include <memory>
 
-
-namespace dupl
+namespace Dupl
 {
 class TextOutput
 {
 public:
     TextOutput();
+    ~TextOutput();
 
-    bool print(const QList<FilesPair>& pairLst);
+    bool print(const QList<FilesPair>& pairList);
 
     void setTypeOutput();
 private:

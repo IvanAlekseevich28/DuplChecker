@@ -1,13 +1,12 @@
 #include "filestatecontroller.h"
+
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonValue>
 #include <QJsonArray>
 #include <QFile>
 
-
-using namespace dupl;
-
+using namespace Dupl;
 
 class JSON_GUIState
 {

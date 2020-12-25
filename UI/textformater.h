@@ -3,8 +3,7 @@
 #include <QStringList>
 #include "../core/filespair.h"
 
-
-namespace dupl
+namespace Dupl
 {
 class TextFormater
 {
@@ -19,12 +18,12 @@ public:
         NoFullPath      = 0x8,
         Pretty          = ThroughEquals | NoFullPath
     };
-    QStringList formatPathsList(const QList<FilesPair>& pairLst, const eForm f)const;
+    QStringList formatPathsList(const QList<FilesPair>& pairList, const eForm f )const;
 
 private:
     QString formatPaths(const FilesPair& pair, const eForm f)const;
-    void cutPath(QString &path1, QString &path2, bool fDelOneMore = true)const;
-    QString makePath(const QStringList& lst)const;
+    void cutPath(QString& path1, QString& path2, bool fDelOneMore = true) const;
+    QString makePath(const QStringList& list)const;
 };
 }
 

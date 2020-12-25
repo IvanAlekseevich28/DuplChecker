@@ -2,8 +2,7 @@
 
 #include <QString>
 
-
-namespace dupl
+namespace Dupl
 {
 struct GUIState
 {

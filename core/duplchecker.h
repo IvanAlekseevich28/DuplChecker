@@ -3,8 +3,7 @@
 #include "iduplchecker.h"
 #include <memory>
 
-
-namespace dupl
+namespace Dupl
 {
 struct FilesPair;
 class DuplChecker
@@ -14,8 +13,7 @@ public:
     ~DuplChecker(){}
 
     QList<FilesPair> getDuplicationFilesPaths(QList<QFile*>& files1,
-                                              QList<QFile*>& files2)const;
-
+                                              QList<QFile*>& files2) const;
     enum eAlg
     {
         SmartHash

@@ -3,25 +3,28 @@
 #include "../textformater.h"
 #include <iostream>
 
-
-using namespace dupl;
+using namespace Dupl;
 using namespace std;
-
 
 SimpleOutput::SimpleOutput()
 {
 
 }
 
-bool SimpleOutput::showResults(const QList<FilesPair>& pairLst)
+SimpleOutput::~SimpleOutput()
+{
+
+}
+
+bool SimpleOutput::showResults(const QList<FilesPair>& pairList)
 {
     TextFormater tf;
 
-    auto QStrLst = tf.formatPathsList(pairLst, TextFormater::Pretty);
+    auto QStrList = tf.formatPathsList(pairList, TextFormater::Pretty);
     bool isNotErrors = true;
-    for (const auto& p : QStrLst)
+    for (const auto& files : QStrList)
     {
-        cout << p.toStdString() << "\n";
+        cout << files.toStdString() << "\n";
     }
 
     return isNotErrors;

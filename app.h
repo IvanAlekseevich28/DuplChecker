@@ -4,19 +4,18 @@
 #include "core/coreadapter.h"
 #include "controller/iloopui.h"
 
-
-namespace dupl
+namespace Dupl
 {
 class App
 {
 public:
     App();
 
-    bool run(int argc, char *argv[]);
+    bool run(int argc, char* argv[]);
 
 private:
-    bool runGUI(int argc, char *argv[]);
-    bool runCLI(int argc, char *argv[]);
+    bool runGUI(int argc, char* argv[]);
+    bool runCLI(int argc, char* argv[]);
     QString supplementPath(const QString &firstPath,
                            const QString& shortPath)const;
 

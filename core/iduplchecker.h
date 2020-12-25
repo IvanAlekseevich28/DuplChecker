@@ -5,16 +5,13 @@
 #include <QString>
 #include "filespair.h"
 
-
-namespace dupl
+namespace Dupl
 {
-struct FilesPair;
 class IDuplChecker
 {
 public:
     virtual QList<FilesPair> getDuplicationFilesPaths(QList<QFile*>& files1,
                                                       QList<QFile*>& files2)=0;
-
     virtual ~IDuplChecker(){}
 
 protected:

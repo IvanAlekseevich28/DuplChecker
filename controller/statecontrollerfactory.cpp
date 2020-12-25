@@ -2,8 +2,7 @@
 
 #include "filestatecontroller.h"
 
-
-using namespace dupl;
+using namespace Dupl;
 
 StateControllerFactory::StateControllerFactory()
 {
