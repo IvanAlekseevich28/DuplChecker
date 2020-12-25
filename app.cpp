@@ -1,7 +1,7 @@
 #include "app.h"
 
 #include "UI/CLI/textoutput.h"
-#include "UI/GUI/mainwindow.h"
+#include "UI/GUI/loopuifactory.h"
 #include <QApplication>
 #include "controller/statecontrollerfactory.h"
 #include <QApplication>
@@ -38,7 +38,7 @@ bool App::runGUI(int argc, char *argv[])
     const QString startPath = argv[0];
     QApplication app(argc, argv);
 
-    m_gui.reset(new MainWindow);
+    m_gui = LoopUIFactory::getLoopUI();
     m_gui->setCore(m_core);
 
     if (!startPath.isEmpty())

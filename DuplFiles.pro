@@ -11,6 +11,7 @@ CONFIG += c++14
 SOURCES += \
     UI/CLI/simpleoutput.cpp \
     UI/CLI/textoutput.cpp \
+    UI/GUI/loopuifactory.cpp \
     UI/textformater.cpp \
     app.cpp \
     controller/statecontrollerfactory.cpp \
@@ -25,6 +26,7 @@ HEADERS += \
     UI/CLI/simpleoutput.h \
     UI/CLI/textoutput.h \
     UI/GUI/guistate.h \
+    UI/GUI/loopuifactory.h \
     UI/textformater.h \
     app.h \
     controller/baseloopui.h \

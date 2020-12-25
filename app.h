@@ -22,6 +22,6 @@ private:
 
 private:
     std::shared_ptr<CoreAdapter>  m_core;
-    std::unique_ptr<ILoopUI>    m_gui;
+    std::shared_ptr<ILoopUI>    m_gui;
 };
 }
