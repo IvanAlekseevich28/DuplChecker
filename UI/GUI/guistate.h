@@ -1,15 +1,14 @@
-#ifndef GUISTATE_H
-#define GUISTATE_H
-
+#pragma once
 
 #include <QString>
-#include <QVector>
 
 
+namespace dupl
+{
 struct GUIState
 {
     QString path1;
     QString path2;
 };
+}
 
-#endif // GUISTATE_H
