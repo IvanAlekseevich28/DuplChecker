@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QString>
-#include "core/coreadapter.h"
+#include "controller/icore.h"
 #include "controller/iloopui.h"
 
 namespace Dupl
@@ -20,7 +20,7 @@ private:
                            const QString& shortPath)const;
 
 private:
-    std::shared_ptr<CoreAdapter>  m_core;
+    std::shared_ptr<ICore>  m_core;
     std::shared_ptr<ILoopUI>    m_gui;
 };
 }

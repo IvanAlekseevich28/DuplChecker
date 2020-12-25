@@ -4,6 +4,7 @@
 #include "UI/GUI/loopuifactory.h"
 #include <QApplication>
 #include "controller/statecontrollerfactory.h"
+#include "core/coreadapter.h"
 #include <QApplication>
 #include <QStringList>
 
