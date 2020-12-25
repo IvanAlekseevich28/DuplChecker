@@ -32,9 +32,9 @@ QList<FilesPair> CoreAdapter::compareTwoDirs(const QString& dir1, const QString&
 QList<QFile*> CoreAdapter::getFilesList(const QString& dir)
 {
     QList<QFile*> filesList;
-    QDirIterator ItR(dir,  QDir::Files, QDirIterator::Subdirectories);
-    while (ItR.hasNext()) {
-        auto p (new QFile(ItR.next()));
+    QDirIterator iter(dir,  QDir::Files, QDirIterator::Subdirectories);
+    while (iter.hasNext()) {
+        auto p (new QFile(iter.next()));
         filesList.push_back(p);
     }
 

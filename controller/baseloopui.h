@@ -11,11 +11,11 @@ class BaseLoopUI : public QMainWindow, public ILoopUI
 {
 public:
     void setCore(const std::shared_ptr<ICore>& core) override
-    {m_core = core;}
+        {m_core = core;}
 
     void setStateController(
             const std::shared_ptr<IStateController>& stateController) override
-    {m_stateController = stateController;}
+        {m_stateController = stateController;}
 
     void show() override {QMainWindow::show();}
 

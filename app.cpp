@@ -70,12 +70,17 @@ bool App::runCLI(int argc, char *argv[])
 
 QString App::supplementPath(const QString& firstPath, const QString& shortPath)const
 {
+    if (!shortPath.isEmpty() && (shortPath[0] == "/" || shortPath[0] == "/"))
+        return shortPath;
+
     auto paths = firstPath.split(SPLITER);
     paths.pop_back();
-    QString str;
-    for (auto& path : paths)
-        str.append(SPLITER + path);
+    paths += shortPath.split(SPLITER);
+    QString path;
+    for (auto& part : paths)
+        if (!part.isEmpty())
+            path.append(SPLITER + part);
 
 
-    return QString(str + SPLITER + shortPath);
+    return path;
 }
