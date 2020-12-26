@@ -69,7 +69,7 @@ void TextFormater::cutPath(QString& path1, QString& path2, bool fDelOneMore)cons
 
     for (auto i1(files1.begin()), i2(files2.begin()); i1 != files1.end() && i2 != files2.end(); i1++, i2++)
     {
-        if (*i1 == *i2)
+        if (*i1 == *i2 && files1.size() > 1 && files2.size() > 1)
         {
             files1.pop_front();
             files2.pop_front();

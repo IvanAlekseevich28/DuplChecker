@@ -16,8 +16,6 @@ public:
 private:
     bool runGUI(int argc, char* argv[]);
     bool runCLI(int argc, char* argv[]);
-    QString supplementPath(const QString &firstPath,
-                           const QString& shortPath)const;
 
 private:
     std::shared_ptr<ICore>  m_core;
